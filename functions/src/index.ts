@@ -1,6 +1,5 @@
 import * as functions from "firebase-functions/v1";
 import{ FieldValue, FieldPath, getFirestore  }  from "firebase-admin/firestore"
-
 //Dependencias de Node.js y Firebase Admin
 import * as admin from "firebase-admin";
 import * as xlsx from "xlsx"; 
