@@ -1,0 +1,21 @@
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Verde para 'Culminado' y 'Asignado' */
+.status-badge.completed,
+.status-badge.assigned,
+.status-badge.active { /* 3. Añade .active aquí */
+  background-color: #e6f7ec; /* Fondo verde claro */
+  color: #28a745; /* Texto verde oscuro */
+}
+
+/* Naranja/Rojo para 'Pendiente' */
+.status-badge.pending {
+  background-color: #fff4e5; /* Fondo naranja claro */
+  color: #ff9800; /* Texto naranja oscuro */
+}

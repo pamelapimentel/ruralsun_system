@@ -1,0 +1,41 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Usuarios: Solo el propio usuario puede modificar su perfil,
+    // pero cualquiera autenticado puede leerlo (ej. para listas).
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null; // Permitir creación si está logueado
+      allow update, delete: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Órdenes: Solo usuarios autenticados pueden crear/leer/actualizar.
+    // Podrías añadir reglas más finas (ej. solo el asignado o un admin puede actualizar)
+    match /orders/{orderId} {
+      allow read, write: if request.auth != null;
+      // Ejemplo: Solo admin o el creador pueden borrar
+      // allow delete: if request.auth != null && (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.profile == 'supervisor' || request.auth.uid == resource.data.createdBy);
+    }
+
+    // Reglas para el historial de Cargas Masivas (batch_uploads)
+    match /batch_uploads/{logId} {
+      // Permite que cualquier usuario autenticado (supervisor) lea la lista
+      allow read: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.profile == 'supervisor';
+      // Solo el backend (Cloud Functions) puede crear logs (no el frontend)
+      allow create: if false; 
+      // Solo los supervisores pueden borrar el historial
+      allow delete: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.profile == 'supervisor';
+      // Nadie debe actualizar los logs
+      allow update: if false;
+    }
+
+    // Podrías añadir colecciones para técnicos, rutas, etc. con sus propias reglas
+
+    // Regla general de seguridad (Denegar todo lo demás por defecto)
+    match /{document=**} {
+      allow read, write: if false; // Deniega todo si no coincide con reglas anteriores
+    }
+  }
+}

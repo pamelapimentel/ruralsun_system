@@ -1,0 +1,8 @@
+/* src/styles/Charts.css */
+/* Estilos generales para ambos gráficos */
+.recharts-legend-wrapper {
+    padding-top: 10px;
+  }
+  .recharts-legend-item-text {
+    color: #666 !important; /* Ajustar color del texto de la leyenda */
+  }

@@ -1,0 +1,111 @@
+.header-container {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  position: relative; /* Necesario para el dropdown */
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  width: 300px;
+  gap: 10px;
+}
+
+.header-search input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.header-user-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative; /* Contenedor relativo */
+}
+
+.icon-button {
+  cursor: pointer;
+}
+
+.header-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px;
+  border-left: 1px solid #eee;
+  cursor: pointer; /* Hacer clickeable el perfil */
+}
+
+.header-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #007bff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.header-user-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+}
+
+.header-user-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.header-user-role {
+  color: #666;
+}
+
+/* Estilos para el Dropdown de Logout */
+.logout-dropdown {
+  position: absolute;
+  top: calc(100% + 10px); /* Debajo del header + espacio */
+  right: 0; /* Alineado a la derecha */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 8px; /* Espacio interior pequeño */
+  z-index: 100;
+  animation: fadeInDropdown 0.2s ease-out;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f44336; /* Rojo */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap; /* Evita que el texto se parta */
+}
+
+.logout-button:hover {
+  background-color: #d32f2f; /* Rojo más oscuro */
+}
+
+@keyframes fadeInDropdown {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,138 @@
+.sidebar-container {
+  width: 250px;
+  background-color: #ffffff;
+  padding: 20px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.sidebar-logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.sidebar-nav {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilo para NavLink y <li> */
+.sidebar-nav a,
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 25px;
+  color: #666;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+}
+
+/* Contenedor del submenú */
+.sidebar-nav-item-with-submenu {
+  position: relative;
+  width: 100%;
+}
+
+.sidebar-nav-item:hover,
+.sidebar-nav a:hover {
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.sidebar-nav-item.active,
+.sidebar-nav a.active {
+  background-color: #e6f7ff;
+  color: #007bff;
+  border-left: 4px solid #007bff;
+  padding-left: 21px;
+}
+
+.sidebar-nav a.active svg {
+  color: #007bff;
+}
+
+/* Estilos para el submenú */
+.sidebar-submenu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  list-style: none;
+  margin: 0 0 0 10px;
+  min-width: 220px;
+  z-index: 10;
+  animation: fadeInSubmenu 0.2s ease-out;
+  /* Oculto por defecto si usamos lógica JS */
+  /* visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.2s, opacity 0.2s linear; */
+}
+
+/* Mostrar submenú cuando el padre tiene hover O está activo el estado */
+/* .sidebar-nav-item-with-submenu:hover .sidebar-submenu {
+   visibility: visible;
+   opacity: 1;
+   transition-delay: 0s;
+ } */
+
+.sidebar-submenu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.sidebar-submenu-item:hover {
+  background-color: #f0f2f5;
+}
+
+.sidebar-submenu a.sidebar-submenu-item.active {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.sidebar-submenu-item.disabled {
+  color: #aaa;
+  cursor: not-allowed;
+}
+.sidebar-submenu-item.disabled:hover {
+  background-color: transparent;
+}
+
+.sidebar-footer {
+  padding: 20px;
+}
+
+@keyframes fadeInSubmenu {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}

@@ -1,0 +1,69 @@
+.progress-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .progress-circle-container {
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
+    position: relative;
+  }
+  
+  .progress-circle-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg); /* Start progress from the top */
+  }
+  
+  .progress-circle-bg {
+    fill: none;
+    stroke: #e6e6e6; /* Light grey background */
+    stroke-width: 10; /* Thickness of the circle */
+  }
+  
+  .progress-circle-progress {
+    fill: none;
+    stroke: #4CAF50; /* Green progress color */
+    stroke-width: 10;
+    stroke-linecap: round; /* Rounded ends */
+    transition: stroke-dashoffset 0.5s ease;
+  }
+  
+  .progress-circle-text {
+    font-size: 20px; /* Adjust size */
+    font-weight: bold;
+    fill: #333; /* Text color */
+    transform: rotate(90deg); /* Counter-rotate text */
+    transform-origin: 50% 50%; /* Rotate around center */
+  }
+  
+  .progress-card-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .progress-card-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+  
+  .progress-card-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Specific color for 'Finalizados' card */
+  .progress-card.finalizados .progress-circle-progress {
+    stroke: #f44336; /* Red color */
+  }
+  .progress-card.finalizados .progress-circle-text {
+    fill: #f44336; /* Red text */
+  }

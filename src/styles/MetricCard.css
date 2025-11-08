@@ -1,0 +1,37 @@
+/* src/styles/MetricCard.css */
+.metric-card-container {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .metric-card-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #e6f7ff; /* Fondo claro para el icono */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .metric-card-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .metric-card-title {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
+  }
+  
+  .metric-card-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }

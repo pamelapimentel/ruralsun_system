@@ -1,0 +1,138 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    animation: fadeIn 0.2s ease-out;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    max-width: 90%; /* Responsividad en pantallas pequeñas */
+    animation: slideIn 0.2s ease-out;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0; /* Quita margen por defecto */
+  }
+  
+  .modal-close-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    line-height: 1; /* Alinear el ícono */
+  }
+  
+  .modal-body input[type="file"] {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+    /* Estilos específicos del navegador para el botón 'Choose File' pueden variar */
+  }
+  
+  .modal-help-text {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+  }
+  
+  .modal-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .modal-btn.cancel {
+    background-color: #fce8e6; /* Fondo rojo muy claro */
+    color: #c9302c; /* Texto rojo */
+    border: 1px solid #f9d8d6; /* Borde rojo muy claro */
+  }
+  .modal-btn.cancel:hover {
+    background-color: #f9d8d6;
+  }
+  
+  .modal-btn.process {
+    background-color: #4CAF50; /* Verde principal */
+    color: white;
+    border: 1px solid #4CAF50;
+  }
+  .modal-btn.process:hover {
+    background-color: #45a049; /* Verde un poco más oscuro */
+  }
+  
+  .modal-btn:disabled {
+    background-color: #e0e0e0; /* Gris claro */
+    color: #a0a0a0; /* Gris oscuro */
+    border-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+  
+  .file-upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border: 2px dashed #007bff;
+    border-radius: 8px;
+    background-color: #f7f9fc;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .file-upload-label:hover {
+    background-color: #e6f7ff;
+  }
+  .file-upload-label span {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+  }
+  .file-upload-input {
+    display: none; /* Oculta el input real */
+  }
+  
+  /* Animaciones simples */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }

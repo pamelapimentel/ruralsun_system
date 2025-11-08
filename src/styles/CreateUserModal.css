@@ -1,0 +1,197 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease-out;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 0; /* Remove padding */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    max-width: 90%;
+    animation: slideIn 0.2s ease-out;
+    overflow: hidden; /* Important for border radius */
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .modal-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+  }
+  
+  .modal-close-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    line-height: 1;
+    color: #888;
+  }
+  .modal-close-btn:hover {
+      color: #333;
+  }
+  
+  .modal-body {
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between rows */
+  }
+  
+  .form-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .form-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #f0f2f5;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 18px; /* Adjust icon size if needed */
+  }
+  
+  .form-input-group {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0;
+    background-color: #fff;
+    overflow: hidden; /* Ensure contained elements follow border radius */
+  }
+  
+  .form-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    /* border-radius: 8px 0 0 8px; /* Only left radius if button is present */
+  }
+  
+  .form-button-inline {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    /* border-radius: 0 8px 8px 0; /* Only right radius */
+    cursor: pointer;
+    font-size: 14px;
+    flex-shrink: 0;
+    height: 100%; /* Make button fill height */
+    margin-left: -1px; /* Overlap border slightly */
+  }
+  
+  .form-select {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: transparent;
+    width: 100%; /* Ensure it fills the group */
+    cursor: pointer;
+  }
+  
+  .form-input-group.file-input-group {
+      padding: 0; /* Remove padding for file input */
+      position: relative; /* Needed for absolute positioning of label */
+      display: flex;
+      align-items: stretch; /* Make children fill height */
+  }
+  
+  .file-input-label {
+      background-color: #eee;
+      color: #555;
+      padding: 10px 15px;
+      border-right: 1px solid #e0e0e0;
+      cursor: pointer;
+      font-size: 14px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+  }
+  
+  .file-input-hidden {
+      display: none; /* Hide the actual file input */
+  }
+  
+  .file-input-name {
+      padding: 10px 15px;
+      font-size: 14px;
+      color: #888;
+      flex-grow: 1; /* Take remaining space */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
+  
+  
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 15px 25px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+  }
+  
+  .modal-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .modal-btn.cancel {
+    background-color: #fce8e6;
+    color: #c9302c;
+    border: 1px solid #f9d8d6;
+  }
+  .modal-btn.cancel:hover {
+    background-color: #f9d8d6;
+  }
+  
+  .modal-btn.save {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+  }
+  .modal-btn.save:hover {
+    background-color: #45a049;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes slideIn { from { transform: translateY(-30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  

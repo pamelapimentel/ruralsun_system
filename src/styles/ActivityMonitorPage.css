@@ -1,0 +1,89 @@
+.summary-cards-grid {
+    display: grid;
+    /* Creates 4 equal columns on larger screens, adjusts for smaller */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .filter-section {
+    margin-bottom: 20px;
+  }
+  
+  .filter-btn {
+    background-color: #f44336; /* Red color */
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex; /* Align icon and text */
+    align-items: center;
+    transition: background-color 0.2s ease;
+  }
+  
+  .filter-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Adjustments for the monitoring table */
+  .monitor-table th,
+  .monitor-table td {
+    /* Allow more space if needed, adjust padding */
+    padding: 12px 10px; 
+  }
+  
+  .encargado-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .avatar-placeholder {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+  
+  /* Group action buttons */
+  .action-buttons-group {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .action-btn { /* Ensure general action button style exists in OrdersPage.css */
+    padding: 6px; /* Slightly smaller padding */
+  }
+  
+  /* Specific colors for action buttons */
+  .action-btn.map-btn {
+    color: #ff9800; /* Orange */
+  }
+  .action-btn.map-btn:hover {
+    background-color: #fff4e5; 
+  }
+  
+  .action-btn.assign-btn {
+    color: #007bff; /* Blue */
+  }
+  .action-btn.assign-btn:hover {
+    background-color: #e6f7ff; 
+  }
+  
+  .action-btn.delete-btn {
+    color: #f44336; /* Red */
+  }
+  .action-btn.delete-btn:hover {
+    background-color: #fde0de; 
+  }
+  
+  /* Reuse quantity badge style from OrdersPage.css */
+  /* Ensure .quantity-badge style exists */

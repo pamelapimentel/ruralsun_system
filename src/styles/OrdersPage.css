@@ -1,0 +1,224 @@
+/* src/styles/OrdersPage.css */
+
+.orders-header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .upload-btn {
+    background-color: #f44336; /* Color rojo de la imagen */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .upload-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  .orders-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+  }
+  
+  .table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .table-controls select,
+  .table-controls input {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  
+  .table-controls .search-bar input {
+    width: 250px; /* Ancho para la barra de búsqueda */
+  }
+  
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  .orders-table th,
+  .orders-table td {
+    padding: 15px 10px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .orders-table th {
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+  }
+  
+  .orders-table td {
+    color: #333;
+  }
+  
+  .quantity-badge {
+    background-color: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #555;
+  }
+  
+  .action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .delete-btn {
+    color: #f44336;
+  }
+  .delete-btn:hover {
+    background-color: #fde0de; /* Fondo rojo muy claro al pasar el mouse */
+  }
+  
+  .table-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .pagination-controls {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .pagination-btn {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    color: #555;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .pagination-btn:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .pagination-btn.active {
+    background-color: #007bff; /* Color azul para página activa */
+    color: white;
+    border-color: #007bff;
+  }
+
+  .page-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* El dashboard-header-path ya tiene margin-bottom, así que esto está bien */
+  }
+
+  .users-header {
+    display: flex; /* Asegura que sea flexbox */
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px; /* Añade espacio entre los botones */
+    margin-bottom: 20px;
+  }
+  
+  .create-user-btn {
+    background-color: #f44336; /* Rojo */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .create-user-btn:hover:not(:disabled) {
+    background-color: #d32f2f;
+  }
+
+  /* Estilo para el nuevo botón de recarga (Azul) */
+  .refresh-status-btn {
+    background-color: #007bff; /* Azul */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .refresh-status-btn:hover:not(:disabled) {
+    background-color: #0056b3; /* Azul oscuro */
+  }
+  .refresh-status-btn:disabled {
+    background-color: #a0cfff;
+    cursor: not-allowed;
+  }
+  
+  .refresh-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007bff; /* Azul */
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .refresh-icon-btn:hover:not(:disabled) {
+    background-color: #e6f7ff; /* Fondo azul claro */
+  }
+  .refresh-icon-btn:disabled {
+    color: #aaa;
+    cursor: not-allowed;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .refresh-icon-btn.spinning svg,
+  .refresh-status-btn.spinning svg {
+    animation: spin 1s linear infinite;
+  }
+
+  
